@@ -50,4 +50,4 @@ jobs:
       uses: actions/upload-artifact@v2
       with:
         name: WebApp1
-        path: ${{ github.workspace }}\bin\Debug\netcoreapp3.1\publish\
+        path: ${{ github.workspace }}\HOW.Selenium.WebApp\bin\Debug\netcoreapp3.1\publish\
