@@ -1,0 +1,43 @@
+﻿@page
+@model HOW.Selenium.WebApp.Pages.RequestModel
+@{
+    ViewData["Title"] = "Request";
+}
+
+<h1>Request</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post" asp-page="Index">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label asp-for="Body" class="control-label"></label>
+                <input asp-for="Body" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input id="Create_Request" type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<script type="text/javascript">
+        let inputs = document.querySelectorAll('[type="text"]'),
+            requestbtn = document.querySelector('#Create_Request')
+        requestbtn.disabled = true
+
+        for (i = 0; i < inputs.length; i++) {
+            inputs[i].addEventListener('input', () => {
+                let values = []
+                inputs.forEach(v => values.push(v.value))
+                setTimeout(function(isDisabled){
+                    console.log('Timeout reached');
+                    requestbtn.disabled = isDisabled;
+                }, 5000, values.includes(''))
+            })
+        }
+</script>
