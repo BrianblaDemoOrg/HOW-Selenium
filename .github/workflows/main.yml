@@ -32,10 +32,10 @@ jobs:
             /p:Version=1.0
 
     - name: Publish
-      run: dotnet publish
+      run: dotnet publish HOW.Selenium.WebApp/HOW.Selenium.WebApp.csproj
 
     - name: Upload WebApp Build Artifact
       uses: actions/upload-artifact@v2
       with:
         name: WebApp1
-        path: /home/runner/work/Playground/Playground/src/HOW.Selenium.WebApp/bin/Debug/netcoreapp3.1/publish/
+        path: D:\a\HOW-Selenium\HOW-Selenium\HOW.Selenium.WebApp\bin\Debug\netcoreapp3.1\publish\
