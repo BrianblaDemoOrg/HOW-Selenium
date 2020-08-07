@@ -31,14 +31,11 @@ jobs:
             --configuration ${{ env.BuildConfig }}
             /p:Version=1.0
 
-    # Runs a single command using the runners shell
-    - name: Run a one-line script
-      run: echo Hello, world!
+    - name: Publish
+      run: dotnet publish
 
-
-
-    # Runs a set of commands using the runners shell
-    - name: Run a multi-line script
-      run: |
-        echo Add other actions to build,
-        echo test, and deploy your project.
+    - name: Upload WebApp Build Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: WebApp1
+        path: /home/runner/work/Playground/Playground/src/HOW.Selenium.WebApp/bin/Debug/netcoreapp3.1/publish/
