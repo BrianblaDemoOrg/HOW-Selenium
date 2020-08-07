@@ -36,7 +36,9 @@ jobs:
     
     - name: Echo Home
       run: echo $HOME
-
+           echo $GITHUB_WORKSPACE
+           echo $GITHUB_EVENT_NAME
+           echo $GITHUB_RUN_NUMBER
     - name: Upload WebApp Build Artifact
       uses: actions/upload-artifact@v2
       with:
