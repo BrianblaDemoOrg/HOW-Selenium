@@ -33,6 +33,9 @@ jobs:
 
     - name: Publish
       run: dotnet publish HOW.Selenium.WebApp/HOW.Selenium.WebApp.csproj
+    
+    - name: Echo Home
+      run: echo $HOME
 
     - name: Upload WebApp Build Artifact
       uses: actions/upload-artifact@v2
