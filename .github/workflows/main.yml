@@ -34,18 +34,6 @@ jobs:
     - name: Publish
       run: dotnet publish HOW.Selenium.WebApp/HOW.Selenium.WebApp.csproj
     
-    - name: Echo Home
-      run: echo $HOME
-
-    - name: Echo GITHUB_WORKSPACE
-      run: echo $GITHUB_WORKSPACE
-
-    - name: Echo GITHUB_EVENT_NAME
-      run: echo $GITHUB_EVENT_NAME
-
-    - name: Echo GITHUB_RUN_NUMBER
-      run: echo $GITHUB_RUN_NUMBER
-
     - name: Upload WebApp Build Artifact
       uses: actions/upload-artifact@v2
       with:
